@@ -1,0 +1,4 @@
+site_id,url,aov,uv,cr,optin,refund_rate,cac,roas
+microstarter,https://microae-starter-mg.netlify.app,29,450,0.018,0.060,0.020,12,2.1
+rentreezen,https://rentree-zen-mg.netlify.app,19,300,0.015,0.050,0.010,8,1.9
+auditexpress,https://auditexpress-mg.netlify.app,49,600,0.022,0.070,0.030,15,2.3
