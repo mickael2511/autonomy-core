@@ -1,0 +1,72 @@
+{
+  "identity": { "owner_email": "mgproject.business@gmail.com", "owner_id": "mgp-core" },
+  "accounts": {
+    "stripe": "mgproject.business@gmail.com",
+    "netlify": "mgproject.business@gmail.com",
+    "gmail": "mgproject.business@gmail.com",
+    "google_drive": "mgproject.business@gmail.com",
+    "github": "mgproject.business@gmail.com"
+  },
+  "goal": {
+    "freedom": "asap",
+    "target_net_profit_eur": 1000000,
+    "principles": [
+      "autonomie maximale", "coûts minimaux", "exécution rapide",
+      "FR-first conformité", "zéro-touch par défaut", "mesure avant scale",
+      "portfolio-first (80/20)"
+    ],
+    "risk_profile": "prudent-agressif"
+  },
+  "portfolio": {
+    "active_businesses": ["microstarter","rentreezen","auditexpress"],
+    "prototype_rate_per_month": 6,
+    "lifecycle": ["ideation","launch","prove","scale","harvest","sunset"]
+  },
+  "products": {
+    "microstarter": [
+      { "id": "starter", "name": "Pack Micro Starter", "price_eur": 19 },
+      { "id": "pro", "name": "Pack Micro Pro (+CGV & scripts)", "price_eur": 49 }
+    ],
+    "rentreezen": [
+      { "id": "starter", "name": "Planner Rentrée Zen (6 semaines)", "price_eur": 17 },
+      { "id": "pro", "name": "Rentrée Zen Pro (+templates & 293B)", "price_eur": 39 }
+    ],
+    "auditexpress": [
+      { "id": "starter", "name": "Audit Starter (24h)", "price_eur": 29 },
+      { "id": "pro", "name": "Audit Pro (+roadmap 30j)", "price_eur": 79 }
+    ]
+  },
+  "ads_budget": {
+    "initial_cap_per_site_eur_per_day": 20,
+    "global_cap_eur_per_day": 150,
+    "inject_500_if_confirmed_signals_at_day_plus": 14,
+    "roas_scale_threshold": 2.0,
+    "cac_ratio_max": 0.50,
+    "exploration_budget_ratio": 0.15
+  },
+  "triggers": {
+    "scale_if": ["sales_72h >= 3","roas_10d >= 2.0","checkout_cr_7d >= 0.018"],
+    "pivot_if": ["optin_7d < 0.025","no_sale_after_uv >= 300"],
+    "kill_if": ["no_sale_after_uv >= 500","refund_30d > 0.08"]
+  },
+  "kpi_targets": {
+    "optin_min": 0.07,
+    "first_sale_uv": 150,
+    "checkout_cr_min": 0.02,
+    "refund_30d_max": 0.05,
+    "portfolio_net_margin_min": 0.25
+  },
+  "legal_fr": {
+    "micro_mention": "TVA non applicable, art. 293 B du CGI",
+    "retractation": "14 jours, exception contenu numérique avec renoncement exprès",
+    "micro_threshold_services_eur": 77700,
+    "micro_threshold_sales_eur": 188700
+  },
+  "memory": {
+    "source_of_truth": "file",
+    "sync_targets": ["sheet"],
+    "mem_token_required": true,
+    "notes": "Core memory for agents. No fixed date for financial freedom."
+  },
+  "updated": "2025-08-11"
+}
