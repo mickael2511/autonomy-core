@@ -1,0 +1,9 @@
+bandit: true           # Portfolio-Bandit (allocation inter-e-biz)
+priceflow: true        # PriceFlow 2.0 (prix du jour)
+anomaly_guard: true    # Détection anomalies (opt-in/CR/refunds)
+self_heal: true        # Auto redeploy via build hook
+rss_ingest: true       # Ingestion RSS -> idées contenu
+gmail_auto_ops: true   # Réponses auto Gmail (Apps Script)
+link_scout: true       # Vérif 404 / liens externes
+fraud_sentinel: true   # Heuristiques anti-fraude
+l10n: false            # Génération EN/FR (off par défaut)
