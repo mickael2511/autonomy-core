@@ -1,0 +1,61 @@
+consent:
+  mode: gcm_v2
+  cmp: tcf_2_2_certified
+email:
+  one_click_unsub: true
+  dmarc: "p=none"
+  warmup_guard: true
+  max_daily_new_contacts: 500
+  bounce_pause_threshold: 0.05
+payments:
+  flow: ["payment_links","checkout","link"]
+  co_badged_choice: true
+  sepa_recurring_only: true
+ads:
+  max_daily_spend_per_site: 25
+  max_daily_spend_global: 150
+  cac_ratio_max: 0.50
+  roas_scale_min: 2.0
+  stop_loss_hours_no_conversion: 36
+  portfolio_bandit_enabled: true
+  priceflow_enabled: true
+  exploration_budget_ratio: 0.15
+seo:
+  indexnow: true
+  ai_mode_aware: true
+  hcu_safe_writer: true
+  content_refresh_days: 21
+guardrails:
+  refund_30d_max: 0.05
+  kill_if_no_sale_uv: 500
+  pivot_if_optin_7d_lt: 0.025
+  pause_checkout_cr_3d_lt: 0.012
+bandits:
+  price_candidates: [17,19,27,29,37,49]
+  reallocation_interval_minutes: 120
+  portfolio_interval_minutes: 120
+ops:
+  feature_flags_url: ""
+  daily_brief_utc: "06:00"
+  indexnow_minute: 15
+  use_dual_scheduler: true
+  sites_csv: ""
+  events_csv: ""
+  redeploy_hook_url: ""
+memory_bus:
+  enable_edge_memory_router: true
+  require_mem_token_for_writes: true
+  snapshot_daily: true
+  snapshot_hourly_decisions: true
+autonomy_plus:
+  rss_sources_env: "RSS_SOURCES"
+  gmail_apps_script_enabled: true
+  fraud_sentinel_enabled: true
+  link_scout_enabled: true
+  l10n_enabled: true
+  partner_scout_enabled: true
+legal_fr:
+  micro_threshold_services_eur: 77700
+  micro_threshold_sales_eur: 188700
+  retractation_days: 14
+  content_exception_enabled: true
