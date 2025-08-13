@@ -1,9 +1,70 @@
-bandit: true           # Portfolio-Bandit (allocation inter-e-biz)
-priceflow: true        # PriceFlow 2.0 (prix du jour)
-anomaly_guard: true    # Détection anomalies (opt-in/CR/refunds)
-self_heal: true        # Auto redeploy via build hook
-rss_ingest: true       # Ingestion RSS -> idées contenu
-gmail_auto_ops: true   # Réponses auto Gmail (Apps Script)
-link_scout: true       # Vérif 404 / liens externes
-fraud_sentinel: true   # Heuristiques anti-fraude
-l10n: false            # Génération EN/FR (désactivé par défaut)
+# v6000 feature flags — contrôle fin côté front & fonctions
+version: 6000
+
+# Activation globale par projet (si tu utilises un seul core pour plusieurs sites)
+projects:
+  microstarter:
+    enabled: true
+  rentreezen:
+    enabled: true
+
+# UI/UX
+ui:
+  enable_faq: true
+  enable_testimonials: true
+  enable_resources_page: true       # /resources.html (affiliate-inject)
+  enable_blog: true                 # /blog/*.html (serp-inject)
+  enable_hero_rotation: true        # content-rotate varie le hero
+  enable_price_badges: true
+
+# SEO
+seo:
+  serp_inject_enabled: true         # active la création d’articles ciblés
+  schema_product_enabled: true
+  sitemap_enabled: true
+  indexnow: true
+  content_refresh_days: 21
+
+# Pricing & AB tests
+pricing:
+  bandit_enabled: true              # active /.netlify/functions/bandit-pricing
+  epsilon: 0.2                      # exploration 20%
+  candidates:
+    starter: [17, 19, 27, 29]
+    pro:     [29, 37, 49]
+
+# Monétisation
+monetization:
+  primary_cta_from_core: true       # prend liens Stripe dans core-memory
+  affiliate_inject_enabled: true    # génère /go/* et resources.html
+  stacked_affiliate_fallback: true  # si pas d’achat, propose une offre affiliée
+
+# Sécurité & conformité France (soft guardrails)
+guardrails:
+  refund_30d_max: 0.05
+  kill_if_no_sale_uv: 500           # coupe la campagne si 0 vente après 500 UV
+  pivot_if_optin_7d_lt: 0.025
+  pause_checkout_cr_3d_lt: 0.012
+
+# Orchestration (fonctions planifiées)
+orchestrator:
+  self_update_cron: "0 */6 * * *"     # si tu utilises le cron côté TOML
+  content_rotate_cron: "0 */12 * * *"
+  serp_inject_cron: "15 */12 * * *"
+  affiliate_inject_cron: "30 */24 * * *"
+  meta_controller_cron: "0 */3 * * *"
+
+# Données externes (optionnelles)
+data:
+  events_csv: ""                      # laisse vide si non utilisé
+  sites_csv: ""                       # idem
+
+# Anti-spam / fraude (placeholders pour évolution)
+fraud:
+  sentinel_enabled: true
+  email_bounce_pause_threshold: 0.05
+
+# Journalisation légère (JSONL via code-commit)
+logging:
+  ab_price_jsonl: "data/ab-price.jsonl"
+  rotate_log_jsonl: "data/rotate.jsonl"
