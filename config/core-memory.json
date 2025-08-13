@@ -1,72 +1,100 @@
 {
-  "identity": { "owner_email": "mgproject.business@gmail.com", "owner_id": "mgp-core" },
-  "accounts": {
-    "stripe": "mgproject.business@gmail.com",
-    "netlify": "mgproject.business@gmail.com",
-    "gmail": "mgproject.business@gmail.com",
-    "google_drive": "mgproject.business@gmail.com",
-    "github": "mgproject.business@gmail.com"
-  },
-  "goal": {
-    "freedom": "asap",
-    "target_net_profit_eur": 1000000,
-    "principles": [
-      "autonomie maximale", "coûts minimaux", "exécution rapide",
-      "FR-first conformité", "zéro-touch par défaut", "mesure avant scale",
-      "portfolio-first (80/20)"
-    ],
-    "risk_profile": "prudent-agressif"
-  },
-  "portfolio": {
-    "active_businesses": ["microstarter","rentreezen","auditexpress"],
-    "prototype_rate_per_month": 6,
-    "lifecycle": ["ideation","launch","prove","scale","harvest","sunset"]
-  },
-  "products": {
-    "microstarter": [
-      { "id": "starter", "name": "Pack Micro Starter", "price_eur": 19 },
-      { "id": "pro", "name": "Pack Micro Pro (+CGV & scripts)", "price_eur": 49 }
-    ],
-    "rentreezen": [
-      { "id": "starter", "name": "Planner Rentrée Zen (6 semaines)", "price_eur": 17 },
-      { "id": "pro", "name": "Rentrée Zen Pro (+templates & 293B)", "price_eur": 39 }
-    ],
-    "auditexpress": [
-      { "id": "starter", "name": "Audit Starter (24h)", "price_eur": 29 },
-      { "id": "pro", "name": "Audit Pro (+roadmap 30j)", "price_eur": 79 }
-    ]
-  },
-  "ads_budget": {
-    "initial_cap_per_site_eur_per_day": 20,
-    "global_cap_eur_per_day": 150,
-    "inject_500_if_confirmed_signals_at_day_plus": 14,
-    "roas_scale_threshold": 2.0,
-    "cac_ratio_max": 0.50,
-    "exploration_budget_ratio": 0.15
-  },
-  "triggers": {
-    "scale_if": ["sales_72h >= 3","roas_10d >= 2.0","checkout_cr_7d >= 0.018"],
-    "pivot_if": ["optin_7d < 0.025","no_sale_after_uv >= 300"],
-    "kill_if": ["no_sale_after_uv >= 500","refund_30d > 0.08"]
-  },
-  "kpi_targets": {
-    "optin_min": 0.07,
-    "first_sale_uv": 150,
-    "checkout_cr_min": 0.02,
-    "refund_30d_max": 0.05,
-    "portfolio_net_margin_min": 0.25
-  },
-  "legal_fr": {
-    "micro_mention": "TVA non applicable, art. 293 B du CGI",
-    "retractation": "14 jours, exception contenu numérique avec renoncement exprès",
-    "micro_threshold_services_eur": 77700,
-    "micro_threshold_sales_eur": 188700
-  },
-  "memory": {
-    "source_of_truth": "file",
-    "sync_targets": ["sheet"],
-    "mem_token_required": true,
-    "notes": "Core memory for agents. No fixed date for financial freedom."
-  },
-  "updated": "2025-08-11"
+  "projects": {
+    "microstarter": {
+      "site": { 
+        "title": "Micro AE Starter", 
+        "hook": "Lancement ultra-lean", 
+        "emoji": "🚀" 
+      },
+      "pricing": { 
+        "starter": 19, 
+        "pro": 49 
+      },
+      "pricing_candidates": { 
+        "starter": [17, 19, 27, 29], 
+        "pro": [29, 37, 49] 
+      },
+      "links": {
+        "starter": "https://buy.stripe.com/REMPLACE_MS_STARTER",
+        "pro":     "https://buy.stripe.com/REMPLACE_MS_PRO",
+        "primary": "https://buy.stripe.com/REMPLACE_MS_PRIMARY"
+      },
+      "rotation_blocks": {
+        "hero": [
+          { "title": "Micro AE Starter", "hook": "Lancement ultra-lean", "emoji": "🚀" },
+          { "title": "Démarre en 48h",    "hook": "CTA reliés, SEO clean", "emoji": "⚡" }
+        ],
+        "faq": [
+          [
+            { "q": "C’est quoi ?", "a": "Une landing ultra-rapide pilotée par /mem/core." },
+            { "q": "Paiement ?",  "a": "CTA reliés aux liens Stripe Starter/Pro." }
+          ],
+          [
+            { "q": "SEO/HCU ?", "a": "Contenus sobres, lisibles et actualisés." },
+            { "q": "A/B tests ?", "a": "Pricing bandit activable sans redeploy." }
+          ]
+        ],
+        "testimonials": [
+          [{ "name": "Camille", "text": "Mise en place express, super perfs." }],
+          [{ "name": "Yanis",   "text": "Parfait pour mon side hustle." }]
+        ]
+      },
+      "seo_targets": [
+        { "keyword": "kit micro-entreprise gratuit", "title": "Kit micro-entreprise : le guide simple", "bullets": ["Checklists","Modèles","Astuces"] },
+        { "keyword": "devenir auto-entrepreneur",    "title": "Devenir auto-entrepreneur : démarrer vite" }
+      ],
+      "affiliate_offers": [
+        { "name": "Outil Facturation", "slug": "facturation", "url": "https://exemple.tld/?aff=xxxx" },
+        { "name": "Hébergement",       "slug": "hebergeur",   "url": "https://exemple2.tld/?aff=yyyy" }
+      ]
+    },
+    "rentreezen": {
+      "site": { 
+        "title": "Rentrée Zen", 
+        "hook": "Rentrée sans stress", 
+        "emoji": "📚" 
+      },
+      "pricing": { 
+        "starter": 17, 
+        "pro": 39 
+      },
+      "pricing_candidates": { 
+        "starter": [15, 17, 27], 
+        "pro": [27, 39, 47] 
+      },
+      "links": {
+        "starter": "https://buy.stripe.com/REMPLACE_RZ_STARTER",
+        "pro":     "https://buy.stripe.com/REMPLACE_RZ_PRO",
+        "primary": "https://buy.stripe.com/REMPLACE_RZ_PRIMARY"
+      },
+      "rotation_blocks": {
+        "hero": [
+          { "title": "Rentrée Zen",       "hook": "6 semaines sans surcharge", "emoji": "📚" },
+          { "title": "Plan zen",          "hook": "Priorités, routines, résultats", "emoji": "🌿" }
+        ],
+        "faq": [
+          [
+            { "q": "Pour qui ?", "a": "Indépendants, étudiants, parents, reprise d’activité." },
+            { "q": "Durée ?",    "a": "6 semaines, 30–45 min/jour." }
+          ],
+          [
+            { "q": "Support ?", "a": "Email + ressources téléchargeables." },
+            { "q": "Mises à jour ?", "a": "Toujours en ligne, adaptables à ta situation." }
+          ]
+        ],
+        "testimonials": [
+          [{ "name": "Sophie", "text": "J’ai retrouvé de l’ordre en 2 semaines." }],
+          [{ "name": "Lucas",  "text": "Méthode simple et efficace." }]
+        ]
+      },
+      "seo_targets": [
+        { "keyword": "plan rentrée organisé", "title": "Plan de rentrée : méthode organisée", "bullets": ["Routines","Checklists","Clarté"] },
+        { "keyword": "gérer le stress rentrée", "title": "Gérer le stress de la rentrée", "bullets": ["Respiration","Planning","Priorités"] }
+      ],
+      "affiliate_offers": [
+        { "name": "Appli de méditation", "slug": "meditation", "url": "https://exemple3.tld/?aff=zzzz" },
+        { "name": "Agenda pro",          "slug": "agenda",     "url": "https://exemple4.tld/?aff=wwww" }
+      ]
+    }
+  }
 }
